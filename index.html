@@ -1,53 +1,194 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Monal - Ambience</title>
+    <style>
+        header {
+            background-color: #1a1a1a;
+            color: #fff;
+            padding: 1rem 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: bold;
+            letter-spacing: 2px;
+            color: #d4af37;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 20px;
+            margin: 0;
+            padding: 0;
+        }
+
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 1rem;
+            transition: color 0.3s ease;
+        }
+
+        nav a:hover {
+            color: #d4af37;
+        }
+
+        .ambience-section {
+            background-color: #000;
+            padding: 50px 0;
+            text-align: center;
+        }
+
+        .ambience-section h1 {
+            color: #d4af37;
+            margin-bottom: 30px;
+            text-transform: uppercase;
+            letter-spacing: 4px;
+        }
+
+        .slider-container {
+            position: relative;
+            max-width: 900px;
+            height: 500px;
+            margin: 0 auto;
+            overflow: hidden;
+            border: 1px solid #d4af37;
+            box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.5);
+        }
+
+        .slide {
+            display: none;
+            width: 100%;
+            height: 100%;
+            animation: fade 1s;
+        }
+
+        .slide.active {
+            display: block;
+        }
+
+        .slide img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        @keyframes fade {
+            from {
+                opacity: 0.4
+            }
+
+            to {
+                opacity: 1
+            }
+        }
+    </style>
 </head>
-<style>
-    header {
-        background-color: #1a1a1a;
-        color: #fff;
-        padding: 1rem 5%;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        position: sticky;
-        top: 0;
-        z-index: 100;
-    }
 
-    .logo {
-        font-size: 1.8rem;
-        font-weight: bold;
-        letter-spacing: 2px;
-        color: #d4af37;
-    }
-
-    nav ul {
-        list-style: none;
-        display: flex;
-        gap: 20px;
-    }
-    nav a:hover {
-        color: #d4af37;
-        transition: color 0.3s ease;
-    }
-</style>
 <body>
+
     <header>
-        <div class="logo">
-            The Monal
-        </div>
+        <div class="logo">The Monal</div>
         <nav>
             <ul>
-                <li> <a href="home.html"></a> Home</li>
-                <li> <a href="menu.html"></a> Menu </li>
-                <li> <a href="reservation.html"></a> Reservation </li>
-                <li> <a href="about.html"></a> About</li>
-                <li> <a href="contact.html"></a> Contact</li>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="menu.html">Menu</a></li>
+                <li><a href="reservation.html">Reservation</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
             </ul>
         </nav>
     </header>
+
+    <section class="ambience-section">
+        <h1>Ambience</h1>
+
+        <div class="slider-container">
+            <div class="slide active">
+                <div class="slide-content">
+                    <img src="assests\ambience\1.jpg">
+                </div>
+            </div>
+            <div class="slide">
+                <div class="slide-content">
+                    <img src="assests\ambience\2.jpg">
+                </div>
+            </div>
+            <div class="slide">
+                <div class="slide-content">
+                    <img src="assests\ambience\3.jpg">
+                </div>
+            </div>
+            <div class="slide">
+                <div class="slide-content">
+                    <img src="assests\ambience\4.jpg">
+                </div>
+            </div>
+            <div class=" slide">
+                    <div class="slide-content">
+                        <img src="assests\ambience\5.jpg">
+                </div>
+            </div>
+            <div class=" slide">
+                        <div class="slide-content">
+                            <img src="assests\ambience\6.jpg">
+                        </div>
+                    </div>
+                    <div class="slide">
+                        <div class="slide-content">
+                            <img src="assests\ambience\7.jpg">
+                        </div>
+                    </div>
+                    <div class="slide">
+                        <div class="slide-content">
+                            <img src="assests\ambience\8.jpg">
+                        </div>
+                    </div>
+            
+                    </div>
+                </div>
+    </section>
+
+    <script>
+        let slideIndex = 0;
+        const slides = document.querySelectorAll(".slide");
+
+        function showSlides(n) {
+            if (n >= slides.length) {
+                slideIndex = 0;
+            } else if (n < 0) {
+                slideIndex = slides.length - 1;
+            } else {
+                slideIndex = n;
+            }
+
+            slides.forEach(slide => {
+                slide.classList.remove("active");
+            });
+
+            slides[slideIndex].classList.add("active");
+        }
+
+        function changeSlide(n) {
+            showSlides(slideIndex + n);
+        }
+
+        setInterval(() => {
+            changeSlide(1);
+        }, 1000);
+    </script>
+
 </body>
 
 </html>
