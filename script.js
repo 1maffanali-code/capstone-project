@@ -41,3 +41,27 @@ document.getElementById('reservationForm').addEventListener('submit', function (
     alert(`Reservation for ${name} on ${date} at ${time} for ${guests} guests submitted! (This is a demo)`);
 
 });
+setInterval(() => {
+    changeSlide(1);
+}, 1000);
+
+let currentMenuIndex = 0;
+const menuPages = document.querySelectorAll(".menu-page");
+
+function showMenuPage(n) {
+    if (menuPages.length === 0) return;
+    if (n >= menuPages.length) {
+        currentMenuIndex = 0;
+    } else if (n < 0) {
+        currentMenuIndex = menuPages.length - 1;
+    } else {
+        currentMenuIndex = n;
+    }
+    menuPages.forEach(page => {
+        page.classList.remove("active");
+    });
+    menuPages[currentMenuIndex].classList.add("active");
+}
+function changeMenuPage(n) {
+    showMenuPage(currentMenuIndex + n);
+}
