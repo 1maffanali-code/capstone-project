@@ -194,6 +194,7 @@ footer {
     margin-bottom: 30px;
     text-transform: uppercase;
     letter-spacing: 4px;
+    text-align: center;
 }
 
 .reservation-form {
@@ -255,135 +256,201 @@ footer {
     line-height: 1.6;
 }
 .menu-container {
+    background-color: #000;
+    padding: 50px 0;
+    text-align: center;
+}
+.page-title {
+    color: #d4af37;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+}
+.section-title {
+    color: #fff;
+    margin-bottom: 30px;
+    font-weight: 300;
+}
+.menu-image-card {
+    position: relative;
+    max-width: 800px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #d4af37;
+    box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.5);
+    background-color: #111;
+    padding: 20px;
+}
+.menu-page-wrapper {
+    width: 100%;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+}
+.menu-page {
+    display: none;
+    width: 100%;
+    max-height: 80vh;
+    object-fit: contain;
+    animation: fade 0.5s ease-in-out;
+}
+.menu-page.active {
+    display: block;
+}
+.nav-btn {
+    background-color: rgba(0, 0, 0, 0.7);
+    color: #d4af37;
+    border: 1px solid #d4af37;
+    padding: 15px 20px;
+    cursor: pointer;
+    font-size: 24px;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 10;
+    transition: background-color 0.3s, color 0.3s;
+}
+.nav-btn:hover {
+    background-color: #d4af37;
+    color: #000;
+}
+.prev-btn {
+    left: -20px;
+}
+.next-btn {
+    right: -20px;
+}
+
+.container {
 
     background-color: #000;
 
-    padding: 50px 0;
+    padding: 60px 20px;
 
     text-align: center;
 
+    min-height: 50vh;
+
 }
 
-.page-title {
+.container h2 {
 
     color: #d4af37;
 
-    margin-bottom: 10px;
+    margin-bottom: 30px;
 
     text-transform: uppercase;
 
     letter-spacing: 4px;
 
-}
-
-.section-title {
-
-    color: #fff;
-
-    margin-bottom: 30px;
+    font-size: 2rem;
 
     font-weight: 300;
 
 }
 
-.menu-image-card {
+#contactForm {
 
-    position: relative;
-
-    max-width: 800px;
+    max-width: 600px;
 
     margin: 0 auto;
 
-    display: flex;
+    background-color: #111;
 
-    align-items: center;
-
-    justify-content: center;
+    padding: 40px;
 
     border: 1px solid #d4af37;
 
     box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.5);
 
-    background-color: #111;
-
-    padding: 20px;
-
-}
-
-.menu-page-wrapper {
-
-    width: 100%;
-
-    overflow: hidden;
-
     display: flex;
 
-    justify-content: center;
+    flex-direction: column;
+
+    gap: 20px;
 
 }
 
-.menu-page {
+#contactForm input,
 
-    display: none;
+#contactForm textarea {
 
     width: 100%;
 
-    max-height: 80vh;
+    padding: 15px;
 
-    object-fit: contain;
+    border: 1px solid #333;
 
-    animation: fade 0.5s ease-in-out;
+    background-color: #222;
 
-}
+    color: #fff;
 
-.menu-page.active {
+    font-size: 1rem;
 
-    display: block;
+    box-sizing: border-box;
 
-}
+    font-family: inherit;
 
-.nav-btn {
-
-    background-color: rgba(0, 0, 0, 0.7);
-
-    color: #d4af37;
-
-    border: 1px solid #d4af37;
-
-    padding: 15px 20px;
-
-    cursor: pointer;
-
-    font-size: 24px;
-
-    position: absolute;
-
-    top: 50%;
-
-    transform: translateY(-50%);
-
-    z-index: 10;
-
-    transition: background-color 0.3s, color 0.3s;
+    transition: border-color 0.3s ease;
 
 }
 
-.nav-btn:hover {
+#contactForm input:focus,
+
+#contactForm textarea:focus {
+
+    outline: none;
+
+    border-color: #d4af37;
+
+}
+
+#contactForm textarea {
+
+    resize: vertical;
+
+    min-height: 150px;
+
+}
+
+#contactForm button {
 
     background-color: #d4af37;
 
     color: #000;
 
+    border: none;
+
+    padding: 15px 20px;
+
+    font-size: 1.1rem;
+
+    font-weight: bold;
+
+    text-transform: uppercase;
+
+    letter-spacing: 2px;
+
+    cursor: pointer;
+
+    transition: background-color 0.3s ease;
+
 }
 
-.prev-btn {
+#contactForm button:hover {
 
-    left: -20px;
+    background-color: #b8860b;
 
 }
 
-.next-btn {
+#responseMessage {
 
-    right: -20px;
+    color: #d4af37;
+
+    margin-top: 10px;
+
+    font-weight: bold;
 
 }
